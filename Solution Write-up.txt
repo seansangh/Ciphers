@@ -1,0 +1,6 @@
+Solution Write-up
+
+In order to solve the problem, first I created a function, myDecriptionFunction, that took a cipher value and key value as input. Then, I created a for loop to iterate through each element of the ciphertext. After that, I made an if statement to verify that the cipher text element was a capital letter, if it wasn't then it would print an error.
+Within the if statement, I converted the cipher value to its numeric representation by subtracting it with ord('A') (ord provides the Unicode point for a value, since A is zero, when looking at a cipher, it would provide the appropriate relative value for each input).
+Then, I created a variable, p, which accounted for the key value and shift the cipher value by the appropriate increment for the key (modulated by %26). This value was added to a variable called plaintext which, by the end, contained the full correct plaintext value.
+example: if the cipher value was S, it would subtract 10 (which is the key value of K) from 18 (the value for S) and end up with 8, the 8th value in the alphabet (starting from A=0) is "I" which is the first letter of the decrypted message.

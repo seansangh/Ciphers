@@ -1,0 +1,5 @@
+Solution Write-up
+
+The first thing I did was extract the ciphertext value by opening it using open(), because esper ciphers work on bytes I had to open it "rb" instead of "r". Then, I reversed the left rotation function to create a right rotation function (rrot) which does the opposite as the provided lrot function in esper.py.
+Then I created a decrypt function, which contained the key rotate value provided (2) and the key xor which was the key value "rORTrfA" with each character's value in unicode code.
+After that I iterated though each element in the ciphertext and reversed the XOR (performing the opposite operations to those provided in the esper.py file) and rotated it based on the rotated value provided (2) using the rrot function. The output was returned in the form of bytes(plaintext), so in order to get the final form I had to decode the text using 'utf-8' to get the original plaintext. Then, I wrote it into the esper_plaintext.txt file.
